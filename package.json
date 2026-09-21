@@ -1,0 +1,23 @@
+{
+  "name": "pomodoroapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --no-sandbox --disable-gpu --disable-software-rasterizer ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomH0999/PomodoroApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomH0999/PomodoroApp/issues"
+  },
+  "homepage": "https://github.com/TomH0999/PomodoroApp#readme",
+  "devDependencies": {
+    "electron": "^44.4.3"
+  }
+}
