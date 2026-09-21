@@ -10,17 +10,27 @@
     <div class="container">
         <h1>Pomodoro App</h1>
         <h2 id="timer-title">Work Timer</h2>
+        
         <div id="timer">25:00</div>
+
         <div class="controls">
             <button id="startBtn">Start</button>
             <button id="pauseBtn">Pause</button>
             <button id="resetBtn">Reset</button>
             <button id="modeBtn">Switch Mode</button>
         </div>
+
         <div class="tasks-section">
-            <h2>Tasks</h2>
-            <input type="text" id="taskInput" placeholder="Add a task...">
-            <button id="addTaskBtn">Add</button>
+            <div class="tasks-header">
+                <h2>Tasks</h2>
+                <button id="clearAllBtn" class="clear-all-btn" title="Clear all tasks">x</button>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Add a task...">
+                <button id="addTaskBtn">Add</button>
+            </div>
+
             <ul id="taskList">
 
             </ul>

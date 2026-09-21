@@ -130,3 +130,83 @@ button {
     align-items: center;
 }
 
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tasks-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.clear-all-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.clear-all-btn:hover {
+    color: #c0392b;
+}
+
+.input-group {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 1rem;
+}
+
+#taskInput {
+    flex-grow: 1;
+    width: auto;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+#taskList li:hover {
+    background: #f1f1f1;
+}
+
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #eee;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-left: 10px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    color: #c0392b;
+}
