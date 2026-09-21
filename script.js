@@ -13,11 +13,27 @@ const workPlaylist = [
     "Sounds/Work_Playlist/3.mp3",
     "Sounds/Work_Playlist/4.mp3",
     "Sounds/Work_Playlist/5.mp3"
-]
+];
 const breakPlaylist = [
     "Sounds/Break_Playlist/1.mp3",
-]
+];
+const workWallpapers = [
+    "Images/Wallpapers/1.png",
+    "Images/Wallpapers/2.png",
+    "Images/Wallpapers/4.png",
+    "Images/Wallpapers/5.png",
+    "Images/Wallpapers/6.png",
+    "Images/Wallpapers/7.png",
+    "Images/Wallpapers/9.png",
+    "Images/Wallpapers/10.png"
+];
+const breakWallpapers = [
+    "Images/Wallpapers/3.png",
+    "Images/Wallpapers/8.png"
+];
+const backgroundLayer = document.getElementById('background-layer');
 
+let currentWallpaperIndex = -1;
 let currentAudio = null;
 let timeLeft = 25 * 60; // 25 minutes in seconds
 let timerId = null;
@@ -85,6 +101,25 @@ function switchMode() {
     updateDisplay();
 }
 
+function changeWallpaper() {
+    const playlist = isWorkMode ? workWallpapers : breakWallpapers;
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * playlist.length);
+    } while (newIndex === currentWallpaperIndex && playlist.length > 1);
+
+    currentWallpaperIndex = newIndex;
+    const imageUrl = playlist[newIndex];
+    backgroundLayer.style.opacity = '0';
+    setTimeout(() => {
+        backgroundLayer.style.backgroundImage = `url('${imageUrl}')`;
+        backgroundLayer.onload = () => {
+            backgroundLayer.style.opacity = '0.8';
+        };
+        backgroundLayer.style.opacity = '0.8';
+    }, 1500);
+}
+
 function getRandomTrack(playlist) {
     const randomIndex = Math.floor(Math.random() * playlist.length);
     return playlist[randomIndex];
@@ -94,6 +129,7 @@ function playBackgroundMusic() {
     if (currentAudio && !currentAudio.ended) return;
     const playlist = isWorkMode ? workPlaylist : breakPlaylist;
     const trackUrl = getRandomTrack(playlist);
+    changeWallpaper();
     currentAudio = new Audio(trackUrl);
     currentAudio.loop = false;
     currentAudio.volume = 0.5;
@@ -193,3 +229,4 @@ taskInput.addEventListener('keypress', function(event) {
 clearAllBtn.addEventListener('click', clearAllTasks);
 
 updateDisplay();
+changeWallpaper();
