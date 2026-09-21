@@ -184,7 +184,8 @@ startBtn.addEventListener('click', startTimer);
 pauseBtn.addEventListener('click', pauseTimer);
 resetBtn.addEventListener('click', resetTimer);
 modeBtn.addEventListener('click', switchMode);
-addTaskBtn.addEventListener('keypress', function(event) {
+addTaskBtn.addEventListener('click', addTask);
+taskInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         addTask();
     }
