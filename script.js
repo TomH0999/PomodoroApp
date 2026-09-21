@@ -3,6 +3,10 @@ const startBtn = document.getElementById('startBtn');
 const pauseBtn = document.getElementById('pauseBtn');
 const resetBtn = document.getElementById('resetBtn');
 const modeBtn = document.getElementById('modeBtn');
+const taskInput =document.getElementById('taskInput');
+const addTaskBtn = document.getElementById('addTaskBtn');
+const taskList = document.getElementById('taskList');
+const clearAllBtn = document.getElementById('clearAllBtn');
 const workPlaylist = [
     "Sounds/Work_Playlist/1.mp3",
     "Sounds/Work_Playlist/2.mp3",
@@ -123,9 +127,68 @@ function resumeBackgroundMusic() {
     }
 }
 
+function createTaskElement(text) {
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.textContent = text;
+    span.style.flexGrow = '1';
+
+    span.addEventListener('click', function(e){
+        e.stopPropagation();
+        li.classList.toggle('completed');
+    });
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'x';
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.title = 'Delete task';
+
+    deleteBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        li.remove();
+    });
+
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+
+    li.addEventListener('click', function() {
+        li.classList.toggle('completed');
+    });
+    
+    return li;
+}
+
+function addTask() {
+    const taskText = taskInput.value.trim();
+
+    if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+    }
+
+    const newTask = createTaskElement(taskText);
+    taskList.appendChild(newTask);
+    taskInput.value = "";
+    taskInput.focus();
+}
+
+function clearAllTasks() {
+    if (taskList.children.length === 0) return;
+
+    if (confirm("Are you sure you want to delete all tasks?")) {
+        taskList.innerHTML = "";
+    }
+}
+
 startBtn.addEventListener('click', startTimer);
 pauseBtn.addEventListener('click', pauseTimer);
 resetBtn.addEventListener('click', resetTimer);
 modeBtn.addEventListener('click', switchMode);
+addTaskBtn.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+});
+clearAllBtn.addEventListener('click', clearAllTasks);
 
 updateDisplay();
