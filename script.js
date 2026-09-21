@@ -25,18 +25,31 @@ const breakPlaylist = [
     "Sounds/Narvent/Way Back Home.mp3"
 ];
 const workWallpapers = [
-    "Images/Wallpapers/1.png",
-    "Images/Wallpapers/2.png",
-    "Images/Wallpapers/4.png",
-    "Images/Wallpapers/5.png",
-    "Images/Wallpapers/6.png",
-    "Images/Wallpapers/7.png",
-    "Images/Wallpapers/9.png",
-    "Images/Wallpapers/10.png"
+    "Images/Wallpapers/WorkWallpapers/1.png",
+    "Images/Wallpapers/WorkWallpapers/2.png",
+    "Images/Wallpapers/WorkWallpapers/3.png",
+    "Images/Wallpapers/WorkWallpapers/4.png",
+    "Images/Wallpapers/WorkWallpapers/5.png",
+    "Images/Wallpapers/WorkWallpapers/6.png",
+    "Images/Wallpapers/WorkWallpapers/7.png",
+    "Images/Wallpapers/WorkWallpapers/8.png",
+    "Images/Wallpapers/WorkWallpapers/9.png",
+    "Images/Wallpapers/WorkWallpapers/10.png",
+    "Images/Wallpapers/WorkWallpapers/11.png",
+    "Images/Wallpapers/WorkWallpapers/12.png",
+    "Images/Wallpapers/WorkWallpapers/13.png",
+    "Images/Wallpapers/WorkWallpapers/14.png"
 ];
 const breakWallpapers = [
-    "Images/Wallpapers/3.png",
-    "Images/Wallpapers/8.png"
+    "Images/Wallpapers/BreakWallpapers/1.png",
+    "Images/Wallpapers/BreakWallpapers/2.png",
+    "Images/Wallpapers/BreakWallpapers/3.png",
+    "Images/Wallpapers/BreakWallpapers/4.png",
+    "Images/Wallpapers/BreakWallpapers/5.png",
+    "Images/Wallpapers/BreakWallpapers/6.png",
+    "Images/Wallpapers/BreakWallpapers/7.png",
+    "Images/Wallpapers/BreakWallpapers/8.png",
+    "Images/Wallpapers/BreakWallpapers/9.png"
 ];
 const backgroundLayer = document.getElementById('background-layer');
 
