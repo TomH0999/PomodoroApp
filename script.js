@@ -8,14 +8,21 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 const clearAllBtn = document.getElementById('clearAllBtn');
 const workPlaylist = [
-    "Sounds/Work_Playlist/1.mp3",
-    "Sounds/Work_Playlist/2.mp3",
-    "Sounds/Work_Playlist/3.mp3",
-    "Sounds/Work_Playlist/4.mp3",
-    "Sounds/Work_Playlist/5.mp3"
+    "Sounds/Narvent/Euphoria.mp3",
+    "Sounds/Narvent/Fade Into Darkness.mp3",
+    "Sounds/Narvent/Fainted.mp3",
+    "Sounds/Narvent/Her Eyes.mp3",
+    "Sounds/Narvent/Memory Reboot.mp3",
+    "Sounds/Narvent/Reboot.mp3",
+    "Sounds/Narvent/Strange Memory.mp3",
+    "Sounds/Narvent/Vintage Sadness.mp3",
+    "Sounds/Narvent/White Roses.mp3"
 ];
 const breakPlaylist = [
-    "Sounds/Break_Playlist/1.mp3",
+    "Sounds/Narvent/Memory.mp3",
+    "Sounds/Narvent/Moonlit.mp3",
+    "Sounds/Narvent/Obsessed.mp3",
+    "Sounds/Narvent/Way Back Home.mp3"
 ];
 const workWallpapers = [
     "Images/Wallpapers/1.png",
