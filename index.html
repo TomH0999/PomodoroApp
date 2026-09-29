@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro App</title>
+    
+    <!-- Meta PWA / Mobile / iOS -->
+    <meta name="theme-color" content="#e74c3c">
+    <meta name="description" content="A simple Pomodoro App with relaxing backgrounds and music.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Pomodoro">
+    <link rel="apple-touch-icon" href="icon.svg">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,5 +53,14 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registered:', reg.scope))
+                    .catch(err => console.error('Service Worker registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>
